@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="pl" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pixel_pet_game module &#8212; Neo Tamagotchi 1 - dokumentacja</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=e81cd88c"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=2827c288"></script>
+    <link rel="index" title="Indeks" href="genindex.html" />
+    <link rel="search" title="Szukaj" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-pixel_pet_game">
+<span id="pixel-pet-game-module"></span><h1>pixel_pet_game module<a class="headerlink" href="#module-pixel_pet_game" title="Link to this heading">¶</a></h1>
+<p>Projekt: Neo Tamagotchi
+Prosty program typu Tamagotchi napisany w Pythonie.
+Użytkownik wybiera zwierzaka, nadaje mu imię i dba o jego energię i nastrój.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pixel_pet_game.Pet">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pixel_pet_game.</span></span><span class="sig-name descname"><span class="pre">Pet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hunger_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boredom_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.Pet" title="Link to this definition">¶</a></dt>
+<dd><p>Klasy bazowe: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Klasa reprezentująca zwierzaka w grze.
+Przechowuje jego stan (energia i nastrój).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.Pet.feed">
+<span class="sig-name descname"><span class="pre">feed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.Pet.feed" title="Link to this definition">¶</a></dt>
+<dd><p>Zwiększa energię zwierzaka (hunger).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.Pet.play">
+<span class="sig-name descname"><span class="pre">play</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_spent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.Pet.play" title="Link to this definition">¶</a></dt>
+<dd><p>Zwiększa nastrój zwierzaka (boredom).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.Pet.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.Pet.update" title="Link to this definition">¶</a></dt>
+<dd><p>Zmniejsza energię i nastrój o stały współczynnik. Sprawdza śmierć.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pixel_pet_game.</span></span><span class="sig-name descname"><span class="pre">PixelPetGame</span></span><a class="headerlink" href="#pixel_pet_game.PixelPetGame" title="Link to this definition">¶</a></dt>
+<dd><p>Klasy bazowe: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Klasa główna gry Neo Tamagotchi.
+Odpowiada za interfejs, logikę gry i obsługę cyklu życia zwierzaka.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.PET_IMAGE_SIZE">
+<span class="sig-name descname"><span class="pre">PET_IMAGE_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(160,</span> <span class="pre">160)</span></em><a class="headerlink" href="#pixel_pet_game.PixelPetGame.PET_IMAGE_SIZE" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.create_control_frame">
+<span class="sig-name descname"><span class="pre">create_control_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">button_text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.create_control_frame" title="Link to this definition">¶</a></dt>
+<dd><p>Tworzy ramkę kontrolną (dla karmienia i zabawy).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.create_game_screen">
+<span class="sig-name descname"><span class="pre">create_game_screen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.create_game_screen" title="Link to this definition">¶</a></dt>
+<dd><p>Tworzy główny ekran gry po wyborze zwierzaka.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.create_main_frame">
+<span class="sig-name descname"><span class="pre">create_main_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.create_main_frame" title="Link to this definition">¶</a></dt>
+<dd><p>Tworzy główną ramkę na ekranie.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.create_pet_selection_screen">
+<span class="sig-name descname"><span class="pre">create_pet_selection_screen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.create_pet_selection_screen" title="Link to this definition">¶</a></dt>
+<dd><p>Tworzy ekran wyboru zwierzaka i wpisania imienia.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.create_sidebar">
+<span class="sig-name descname"><span class="pre">create_sidebar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.create_sidebar" title="Link to this definition">¶</a></dt>
+<dd><p>Tworzy boczny panel z tytułem i paskami statusu.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.create_status_bar">
+<span class="sig-name descname"><span class="pre">create_status_bar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.create_status_bar" title="Link to this definition">¶</a></dt>
+<dd><p>Tworzy pojedynczy pasek statusu.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.feed_pet">
+<span class="sig-name descname"><span class="pre">feed_pet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.feed_pet" title="Link to this definition">¶</a></dt>
+<dd><p>Funkcja karmienia zwierzaka.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.load_pet_images">
+<span class="sig-name descname"><span class="pre">load_pet_images</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.load_pet_images" title="Link to this definition">¶</a></dt>
+<dd><p>Ładuje obrazki zwierzaków z folderu assets.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.play_with_pet">
+<span class="sig-name descname"><span class="pre">play_with_pet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.play_with_pet" title="Link to this definition">¶</a></dt>
+<dd><p>Funkcja zabawy ze zwierzakiem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.reset_game_state">
+<span class="sig-name descname"><span class="pre">reset_game_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.reset_game_state" title="Link to this definition">¶</a></dt>
+<dd><p>Resetuje stan gry (nowa gra / po śmierci zwierzaka).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.select_pet">
+<span class="sig-name descname"><span class="pre">select_pet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pet_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.select_pet" title="Link to this definition">¶</a></dt>
+<dd><p>Obsługuje wybór zwierzaka przez użytkownika.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.show_death_screen">
+<span class="sig-name descname"><span class="pre">show_death_screen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pet_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.show_death_screen" title="Link to this definition">¶</a></dt>
+<dd><p>Pokazuje ekran śmierci zwierzaka.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.start_game">
+<span class="sig-name descname"><span class="pre">start_game</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.start_game" title="Link to this definition">¶</a></dt>
+<dd><p>Rozpoczyna grę z wybranym zwierzakiem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.update_loop">
+<span class="sig-name descname"><span class="pre">update_loop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.update_loop" title="Link to this definition">¶</a></dt>
+<dd><p>Główna pętla gry — co sekundę zmniejsza parametry zwierzaka.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pixel_pet_game.PixelPetGame.update_status_display">
+<span class="sig-name descname"><span class="pre">update_status_display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pixel_pet_game.PixelPetGame.update_status_display" title="Link to this definition">¶</a></dt>
+<dd><p>Aktualizuje paski statusu (energia i nastrój).</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Neo Tamagotchi</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Szukaj" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Nawigacja</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Yevhen Babalyk, Ivan Smirnov.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/pixel_pet_game.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
